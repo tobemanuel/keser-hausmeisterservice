@@ -1,1 +1,510 @@
+/* === RESET & BASE === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
+:root {
+–primary: #1e40af;
+–primary-dark: #1e3a8a;
+–secondary: #64748b;
+–accent: #3b82f6;
+–text: #1e293b;
+–text-light: #64748b;
+–bg: #f8fafc;
+–white: #fff;
+–border: #e2e8f0;
+–success: #10b981;
+–shadow-sm: 0 1px 3px rgba(0,0,0,.1);
+–shadow-md: 0 4px 6px rgba(0,0,0,.1);
+–shadow-lg: 0 10px 15px rgba(0,0,0,.1);
+–radius: .5rem;
+–radius-lg: 1rem;
+–transition: all .3s ease;
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+
+body{
+font-family:‘Inter’,-apple-system,BlinkMacSystemFont,‘Segoe UI’,Roboto,sans-serif;
+line-height:1.6;
+color:var(–text);
+background:var(–white);
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale
+}
+
+.container{
+max-width:1200px;
+margin:0 auto;
+padding:0 1.25rem
+}
+
+.hidden{display:none!important}
+
+/* === HEADER === */
+.header{
+background:var(–white);
+box-shadow:var(–shadow-sm);
+position:sticky;
+top:0;
+z-index:100;
+padding:1rem 0
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:1rem;
+flex-wrap:wrap
+}
+
+.logo h1{
+font-size:1.5rem;
+color:var(–primary);
+font-weight:700;
+margin-bottom:.25rem;
+line-height:1.2
+}
+
+.logo .tagline{
+font-size:.875rem;
+color:var(–text-light)
+}
+
+.phone-btn{
+display:flex;
+align-items:center;
+gap:.5rem;
+padding:.75rem 1.5rem;
+background:var(–primary);
+color:var(–white);
+text-decoration:none;
+border-radius:var(–radius);
+font-weight:600;
+transition:var(–transition);
+white-space:nowrap
+}
+
+.phone-btn:hover{
+background:var(–primary-dark);
+transform:translateY(-2px);
+box-shadow:var(–shadow-md)
+}
+
+/* === HERO === */
+.hero{
+background:linear-gradient(135deg,var(–primary) 0%,var(–primary-dark) 100%);
+color:var(–white);
+padding:4rem 0;
+text-align:center
+}
+
+.hero-content{
+max-width:900px;
+margin:0 auto
+}
+
+.hero-title{
+font-size:clamp(2rem,5vw,3.5rem);
+font-weight:700;
+margin-bottom:1rem;
+line-height:1.2
+}
+
+.hero-subtitle{
+font-size:1.125rem;
+margin-bottom:2rem;
+opacity:.95;
+max-width:700px;
+margin-left:auto;
+margin-right:auto
+}
+
+.hero-cta{
+display:flex;
+gap:1rem;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:2.5rem
+}
+
+.btn{
+display:inline-block;
+padding:1rem 2rem;
+border-radius:var(–radius);
+font-weight:600;
+text-decoration:none;
+transition:var(–transition);
+border:none;
+cursor:pointer;
+font-size:1rem;
+text-align:center
+}
+
+.btn-primary{
+background:var(–white);
+color:var(–primary)
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+box-shadow:var(–shadow-lg)
+}
+
+.btn-secondary{
+background:transparent;
+color:var(–white);
+border:2px solid var(–white)
+}
+
+.btn-secondary:hover{
+background:var(–white);
+color:var(–primary)
+}
+
+.btn-block{width:100%}
+
+.hero-badges{
+display:flex;
+gap:2rem;
+justify-content:center;
+flex-wrap:wrap
+}
+
+.badge{
+display:flex;
+align-items:center;
+gap:.5rem;
+font-size:.875rem
+}
+
+/* === SERVICES === */
+.services{
+padding:5rem 0;
+background:var(–bg)
+}
+
+.section-header{
+text-align:center;
+margin-bottom:3rem
+}
+
+.section-header h2{
+font-size:2.5rem;
+color:var(–text);
+margin-bottom:1rem;
+font-weight:700
+}
+
+.section-header p{
+font-size:1.125rem;
+color:var(–text-light);
+max-width:700px;
+margin:0 auto
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:2rem
+}
+
+.service-card{
+background:var(–white);
+padding:2rem;
+border-radius:var(–radius-lg);
+box-shadow:var(–shadow-md);
+transition:var(–transition);
+border:1px solid var(–border)
+}
+
+.service-card:hover{
+transform:translateY(-5px);
+box-shadow:var(–shadow-lg)
+}
+
+.service-icon{
+width:80px;
+height:80px;
+background:linear-gradient(135deg,var(–primary),var(–accent));
+border-radius:var(–radius-lg);
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:1.5rem;
+color:var(–white)
+}
+
+.service-card h3{
+font-size:1.5rem;
+margin-bottom:.75rem;
+color:var(–text)
+}
+
+.service-card p{
+color:var(–text-light);
+line-height:1.7
+}
+
+/* === ABOUT === */
+.about{
+padding:5rem 0;
+background:var(–white)
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:3rem;
+align-items:start
+}
+
+.about-text h2{
+font-size:2.5rem;
+margin-bottom:1.5rem;
+color:var(–text)
+}
+
+.about-text p{
+font-size:1.125rem;
+color:var(–text-light);
+margin-bottom:1.5rem;
+line-height:1.8
+}
+
+.about-features{
+display:flex;
+flex-direction:column;
+gap:1rem;
+margin-top:2rem
+}
+
+.feature{
+display:flex;
+align-items:center;
+gap:1rem;
+padding:1rem;
+background:var(–bg);
+border-radius:var(–radius)
+}
+
+.feature svg{
+color:var(–primary);
+flex-shrink:0
+}
+
+.about-area{
+background:var(–bg);
+padding:2rem;
+border-radius:var(–radius-lg);
+border:1px solid var(–border)
+}
+
+.about-area h3{
+font-size:1.5rem;
+margin-bottom:1rem;
+color:var(–text)
+}
+
+.about-area ul{list-style:none}
+
+.about-area li{
+padding:.75rem 0;
+border-bottom:1px solid var(–border);
+color:var(–text-light)
+}
+
+.about-area li:last-child{border-bottom:none}
+
+.about-area li::before{
+content:“✓ “;
+color:var(–success);
+font-weight:700;
+margin-right:.5rem
+}
+
+/* === CONTACT === */
+.contact{
+padding:5rem 0;
+background:var(–bg)
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1.5fr;
+gap:3rem;
+margin-top:3rem
+}
+
+.contact-info h3{
+font-size:1.75rem;
+margin-bottom:2rem;
+color:var(–text)
+}
+
+.contact-details{
+font-style:normal
+}
+
+.contact-item{
+display:flex;
+gap:1rem;
+margin-bottom:2rem
+}
+
+.contact-item svg{
+color:var(–primary);
+flex-shrink:0;
+margin-top:.25rem
+}
+
+.contact-item strong{
+display:block;
+margin-bottom:.25rem;
+color:var(–text)
+}
+
+.contact-item p{
+color:var(–text-light);
+line-height:1.6
+}
+
+.contact-item a{
+color:var(–primary);
+text-decoration:none
+}
+
+.contact-item a:hover{text-decoration:underline}
+
+/* === FORM === */
+.contact-form-wrap{
+background:var(–white);
+padding:2rem;
+border-radius:var(–radius-lg);
+box-shadow:var(–shadow-md)
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:1.5rem
+}
+
+.form-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:1.5rem
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+gap:.5rem
+}
+
+.form-group label{
+font-weight:600;
+color:var(–text)
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+padding:.875rem;
+border:1px solid var(–border);
+border-radius:var(–radius);
+font-family:inherit;
+font-size:1rem;
+transition:border-color .3s ease
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+outline:none;
+border-color:var(–primary)
+}
+
+.form-group textarea{
+resize:vertical;
+min-height:120px
+}
+
+/* === FOOTER === */
+.footer{
+background:var(–text);
+color:var(–white);
+padding:3rem 0 2rem
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:2rem;
+text-align:center
+}
+
+.footer-brand h3{margin-bottom:.5rem}
+
+.footer-brand p{opacity:.8}
+
+.footer-contact h4{margin-bottom:1rem}
+
+.footer-contact a{
+color:var(–white);
+text-decoration:none
+}
+
+.footer-contact a:hover{text-decoration:underline}
+
+.footer-legal{
+grid-column:1/-1;
+padding-top:2rem;
+border-top:1px solid rgba(255,255,255,.1);
+font-size:.875rem;
+opacity:.7
+}
+
+/* === WHATSAPP === */
+.whatsapp-btn{
+position:fixed;
+bottom:30px;
+right:30px;
+width:60px;
+height:60px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:var(–shadow-lg);
+z-index:999;
+transition:var(–transition)
+}
+
+.whatsapp-btn:hover{
+transform:scale(1.1);
+box-shadow:0 15px 30px rgba(37,211,102,.4)
+}
+
+/* === RESPONSIVE === */
+@media(max-width:768px){
+.nav{justify-content:center;text-align:center}
+.logo{width:100%}
+.hero{padding:3rem 0}
+.hero-title{font-size:2rem}
+.hero-subtitle{font-size:1rem}
+.hero-cta{flex-direction:column;width:100%}
+.btn{width:100%}
+.hero-badges{flex-direction:column;gap:1rem}
+.services-grid{grid-template-columns:1fr}
+.about-grid{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+.form-row{grid-template-columns:1fr}
+.whatsapp-btn{width:50px;height:50px;bottom:20px;right:20px}
+.whatsapp-btn svg{width:28px;height:28px}
+}
+
+@media(max-width:480px){
+.section-header h2{font-size:2rem}
+.about-text h2{font-size:2rem}
+}
